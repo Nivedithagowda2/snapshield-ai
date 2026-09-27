@@ -242,6 +242,22 @@ Once running, SnapShield shows a small shield icon in the Windows system tray (b
 
 This tray icon **is** the app's entire day-to-day interface — no terminal, no console window, no re-launch steps. Enable "Start with Windows" once, and SnapShield becomes a permanent, silent background guardian from that point on.
 
+---
+##  Conclusion
+
+SnapShield AI demonstrates a complete, working, on-device AI privacy system — from real Snapdragon NPU benchmarking through Qualcomm AI Hub, to a fully functional screen-protection pipeline, to a polished, installable Windows application controlled entirely from the system tray.
+
+Every claim in this document is backed by evidence, not assertion:
+- **NPU execution** — verified through real, independently checkable Qualcomm AI Hub job links, not simulated numbers
+- **~59x speedup** — measured directly against a CPU baseline on the same reference hardware
+- **Real-world detection** — confirmed live across Chrome, WhatsApp, Google Meet, VS Code, and OneNote, catching everything from Aadhaar numbers to Razorpay keys and Twilio tokens
+- **Honest engineering tradeoffs** — including the decision to reject a faster but less accurate INT8 configuration in favor of one that actually passes accuracy validation
+
+The result is an application that solves a real, everyday problem — accidental exposure of sensitive information during screen sharing — using an architecture where on-device NPU acceleration isn't just a performance optimization, but the only architecture that makes the product's core promise possible: protection without ever uploading the very secrets it's meant to protect.
+
+SnapShield AI is built and optimized for Snapdragon-powered HP PCs, install-once and run-anywhere, fully offline, and ready to protect from the moment it's launched.
+---
+
 
 
 
