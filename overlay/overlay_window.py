@@ -12,7 +12,7 @@ import threading
       
 try:
     ctypes.windll.shcore.SetProcessDpiAwareness(2) 
-except Exception: 
+except Exception:  
     try: 
         ctypes.windll.user32.SetProcessDPIAware()
     except Exception:
