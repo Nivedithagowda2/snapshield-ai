@@ -9,7 +9,7 @@ only once an OCR pass completes and did NOT see it again."""
 import ctypes
 import tkinter as tk 
 import threading
- 
+  
 try:
     ctypes.windll.shcore.SetProcessDpiAwareness(2)
 except Exception:
