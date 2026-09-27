@@ -8,7 +8,7 @@ import re
 
 _TOKEN_RE = re.compile(r"[A-Za-z0-9_\-+/=.]{16,}") 
 
-
+ 
 def shannon_entropy(s: str) -> float:
     if not s:
         return 0.0
