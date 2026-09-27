@@ -6,7 +6,7 @@ doesn't match any known prefix."""
 import math
 import re 
 
-_TOKEN_RE = re.compile(r"[A-Za-z0-9_\-+/=.]{16,}")
+_TOKEN_RE = re.compile(r"[A-Za-z0-9_\-+/=.]{16,}") 
 
 
 def shannon_entropy(s: str) -> float:
