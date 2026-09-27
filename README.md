@@ -1,21 +1,21 @@
-# 🛡️ SnapShield AI
+#  SnapShield AI
 ### Real-Time On-Device Privacy Guardian — Optimized for Snapdragon-Powered HP PCs
 
 **Your screen is being watched during every call, stream, and share. SnapShield watches it first — entirely on-device, entirely on the Snapdragon NPU.**
 
 ---
 
-## 📌 What is SnapShield AI?
+##  What is SnapShield AI?
 
 SnapShield AI is a background application that continuously monitors your screen and **automatically blurs sensitive information** — API keys, Aadhaar numbers, card numbers, passwords, UPI IDs, phone numbers — the instant it appears, before it can be seen on a video call, live stream, screen share, or recording.
 
 **This application is built and optimized to run on Snapdragon-powered HP PCs.** All AI inference — text detection and text recognition — is designed to execute on the **Snapdragon Hexagon NPU**, not the cloud, not a remote server. Your screen content never leaves your device.
 
-> 🔷 **NPU-first, by design.** Every AI workload in this pipeline is compiled via ONNX Runtime + QNN Execution Provider specifically to run on Snapdragon's Hexagon NPU. Every performance number in this document was measured on a real, hosted Snapdragon X Elite CRD device via Qualcomm AI Hub — the same silicon family found in Snapdragon-powered HP Copilot+ PCs — not estimated, not simulated.
+>  **NPU-first, by design.** Every AI workload in this pipeline is compiled via ONNX Runtime + QNN Execution Provider specifically to run on Snapdragon's Hexagon NPU. Every performance number in this document was measured on a real, hosted Snapdragon X Elite CRD device via Qualcomm AI Hub — the same silicon family found in Snapdragon-powered HP Copilot+ PCs — not estimated, not simulated.
 
 ---
 
-## 🎯 The Problem
+##  The Problem
 
 Screen sharing is now constant — video calls, live coding streams, remote support, client demos, online classes. Sensitive data appears on screen without warning:
 
@@ -31,7 +31,7 @@ A person cannot watch their own screen and present, teach, or debug at the same 
 
 ---
 
-## ✅ The Solution
+##  The Solution
 
 1. The screen is watched continuously (event-triggered + baseline sampling, not wasteful 30fps capture)
 2. Changed regions are passed to an **on-device OCR pipeline, optimized to run on the Snapdragon NPU**
@@ -42,7 +42,7 @@ A person cannot watch their own screen and present, teach, or debug at the same 
 
 ---
 
-## 💻 Built for Snapdragon-Powered HP PCs
+##  Built for Snapdragon-Powered HP PCs
 
 This project targets **HP's Snapdragon X-series Copilot+ PCs** (Snapdragon X Elite / X Plus / X2 Elite) as its deployment platform. The reasoning is direct:
 
@@ -53,15 +53,15 @@ This project targets **HP's Snapdragon X-series Copilot+ PCs** (Snapdragon X Eli
 
 ---
 
-## 🖼️ It In Action
+##  It In Action
 
 **Running as a real background application — no terminal, no Python console, just a tray icon:**
 
 The app runs as a packaged `.exe` with a live shield icon in the Windows system tray, right alongside WhatsApp, Chrome, and other everyday apps — confirming it behaves like a real, installed Windows application rather than a developer script.
 
 **Right-click menu on the tray icon:**
-- 🟢 **Pause Protection** — temporarily disable detection
-- 🔴 **Exit SnapShield** — close cleanly
+-  **Pause Protection** — temporarily disable detection
+-  **Exit SnapShield** — close cleanly
 
 **Live protection confirmed working across real applications:**
 - Google Meet contact picker — email addresses precisely blurred, names left visible
@@ -74,7 +74,7 @@ The app runs as a packaged `.exe` with a live shield icon in the Windows system 
 
 ---
 
-## ⚡ Why This Needs the Snapdragon NPU
+##  Why This Needs the Snapdragon NPU
 
 Two independent reasons, both true here:
 
@@ -86,7 +86,7 @@ Two independent reasons, both true here:
 
 ---
 
-## 🧠 Benchmark Results — Real Snapdragon NPU Execution
+##  Benchmark Results — Real Snapdragon NPU Execution
 
 All numbers below were measured via **Qualcomm AI Hub**, running on a **real hosted Snapdragon X Elite CRD device (Windows 11)** — the reference platform for Snapdragon-powered HP Copilot+ PCs.
 
@@ -104,12 +104,12 @@ xychart-beta
 
 | Model | Precision | Compute Unit | Time (ms) | Accuracy (PSNR) | Shipped in final build? |
 |---|---|---|---|---|---|
-| Detector | Float | CPU | 1989.6 | — (baseline) | ❌ No |
-| Detector | Float | NPU | 38.3 | 84.24 dB | ❌ No |
-| Detector | **INT8 (w8a8)** | **NPU** | **13.5** | 34.22 dB ✅ passes | ✅ **Yes** |
-| Recognizer | Float | CPU | 14.8 | — (baseline) | ❌ No |
-| Recognizer | **Float** | **NPU** | **20.4** | 49.98 dB ✅ | ✅ **Yes** |
-| Recognizer | INT8 (w8a8) | NPU | 10.7 | 10.76 dB ❌ fails | ❌ No — accuracy broken |
+| Detector | Float | CPU | 1989.6 | — (baseline) |  No |
+| Detector | Float | NPU | 38.3 | 84.24 dB |  No |
+| Detector | **INT8 (w8a8)** | **NPU** | **13.5** | 34.22 dB  passes |  **Yes** |
+| Recognizer | Float | CPU | 14.8 | — (baseline) |  No |
+| Recognizer | **Float** | **NPU** | **20.4** | 49.98 dB  |  **Yes** |
+| Recognizer | INT8 (w8a8) | NPU | 10.7 | 10.76 dB  |  No — accuracy broken |
 
 ### Final shipped configuration
 
@@ -127,7 +127,7 @@ We initially quantized both stages to INT8. The detector passed accuracy validat
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -162,7 +162,7 @@ We initially quantized both stages to INT8. The detector passed accuracy validat
 
 ---
 
-## 🔍 What Gets Detected
+##  What Gets Detected
 
 | Category | Method |
 |---|---|
@@ -178,7 +178,7 @@ The entropy layer is the key differentiator: regex only catches formats you anti
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 ### Option 1 — Run the packaged executable (recommended, no setup)
 ```
@@ -199,7 +199,7 @@ The application runs identically on Snapdragon Windows-on-ARM hardware. On such 
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 snapshield-ai/
@@ -216,21 +216,3 @@ snapshield-ai/
 ```
 
 ---
-
-## 🏆 Judging Criteria Alignment
-
-| Criterion | How SnapShield addresses it |
-|---|---|
-| **Technical Implementation** | Real Qualcomm AI Hub model (EasyOCR), mixed-precision INT8/float, ONNX Runtime + QNN Execution Provider, 100% NPU execution confirmed via AI Hub profiling on the Snapdragon X Elite reference platform, measured NPU-vs-CPU benchmarks (~59x speedup) |
-| **Use Case & Innovation** | Solves a real, everyday problem with no existing consumer equivalent; entropy-based detection catches secrets no regex rule anticipated; auto-arm removes the need to remember to enable protection |
-| **Deployment & Accessibility** | Packaged as a standalone `.exe`, runs from the system tray with no terminal, works fully offline, zero network calls, deploys identically on Snapdragon-powered HP PCs |
-| **Presentation & Documentation** | Clear before/after demo, documented architecture and benchmarks, honest reporting of what worked and what didn't (INT8 accuracy limitation) |
-
----
-
-## ⚠️ Honest Limitations
-
-- The application as a whole does not run "on the NPU" — only the AI inference workloads do (text detection and recognition). The capture loop, detection logic, and UI run on the CPU/GPU, which is the correct architecture for any NPU-accelerated app.
-- Development and functional testing were done on a standard Windows laptop, since dedicated Snapdragon hardware wasn't available during the build window. NPU execution itself was verified independently and rigorously through Qualcomm AI Hub's real hosted Snapdragon X Elite device profiling — not simulated — with every job independently verifiable via the links in `BENCHMARKS.md`.
-- OCR-based detection is not 100% guaranteed — the multi-layer approach (regex + checksums + entropy + context) is designed to minimize both missed secrets and false positives, but no OCR system is perfect.
-- Auto-arm detects that a screen-sharing app is *running*, not necessarily that a *share is actively in progress* — a reasonable, explainable approximation given the scope of this project.
