@@ -1,6 +1,6 @@
 #  SnapShield AI
 ### Real-Time On-Device Privacy Guardian — Optimized for Snapdragon-Powered HP PCs
-
+ 
 **Your screen is being watched during every call, stream, and share. SnapShield watches it first — entirely on-device, entirely on the Snapdragon NPU.**
 
 --- 
