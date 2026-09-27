@@ -3,7 +3,7 @@
 
 **Your screen is being watched during every call, stream, and share. SnapShield watches it first — entirely on-device, entirely on the Snapdragon NPU.**
 
----
+--- 
  
 ##  What is SnapShield AI?
  
