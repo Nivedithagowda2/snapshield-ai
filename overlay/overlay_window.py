@@ -7,7 +7,7 @@ takes, or how long the person stays on the same screen. It disappears
 only once an OCR pass completes and did NOT see it again."""
 
 import ctypes
-import tkinter as tk
+import tkinter as tk 
 import threading
 
 try:
