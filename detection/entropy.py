@@ -11,7 +11,7 @@ _TOKEN_RE = re.compile(r"[A-Za-z0-9_\-+/=.]{16,}")
  
 def shannon_entropy(s: str) -> float:  
     if not s:
-        return 0.0
+        return 0.0 
     freq = {}
     for ch in s:
         freq[ch] = freq.get(ch, 0) + 1
