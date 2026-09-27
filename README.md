@@ -4,7 +4,7 @@
 **Your screen is being watched during every call, stream, and share. SnapShield watches it first — entirely on-device, entirely on the Snapdragon NPU.**
 
 ---
-
+ 
 ##  What is SnapShield AI?
  
 SnapShield AI is a background application that continuously monitors your screen and **automatically blurs sensitive information** — API keys, Aadhaar numbers, card numbers, passwords, UPI IDs, phone numbers — the instant it appears, before it can be seen on a video call, live stream, screen share, or recording.
