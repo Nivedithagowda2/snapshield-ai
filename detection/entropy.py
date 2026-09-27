@@ -4,7 +4,7 @@ regex for. A random-looking string with high character-level entropy
 doesn't match any known prefix."""
 
 import math
-import re
+import re 
 
 _TOKEN_RE = re.compile(r"[A-Za-z0-9_\-+/=.]{16,}")
 
