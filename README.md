@@ -216,3 +216,37 @@ snapshield-ai/
 ```
 
 ---
+##  Install Once, Use Anytime
+
+`SnapShield.exe` is a fully standalone, self-contained application — download and run it **once**, and it's ready to use anytime afterward. No reinstalling, no internet connection required after first launch, no dependency setup.
+```
+pyinstaller --name SnapShield --onefile --windowed app/main_demo.py
+```
+
+The command above builds the standalone `SnapShield.exe` from source. Once built:
+
+- **No Python, no pip, no virtual environment needed** — everything is bundled into the single `.exe`
+- **Works completely offline** after the first launch (which only needs internet briefly to download OCR model weights the very first time)
+- **Keep it anywhere** — Desktop, Downloads, a USB drive — and double-click it whenever you need protection
+- **True zero-touch, always-on protection:** right-click the tray icon → **"Enable Start with Windows"**, and SnapShield launches automatically every time you log in — no need to reopen it manually, ever again
+
+### The tray icon is where "install once, use anytime" actually lives
+
+Once running, SnapShield shows a small shield icon in the Windows system tray (bottom-right, next to the clock/wifi/battery icons). Right-clicking it gives you:
+
+| Option | What it does |
+|---|---|
+|  **Pause / Resume Protection** | Temporarily stop or restart screen monitoring |
+|  **Enable / Disable Start with Windows** | Toggle automatic launch on every Windows login |
+|  **Exit SnapShield** | Close the app cleanly |
+
+This tray icon **is** the app's entire day-to-day interface — no terminal, no console window, no re-launch steps. Enable "Start with Windows" once, and SnapShield becomes a permanent, silent background guardian from that point on.
+
+
+
+
+
+
+
+
+
