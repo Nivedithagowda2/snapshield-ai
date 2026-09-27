@@ -5,7 +5,7 @@ Boxes are NOT time-based. A box stays visible for as long as it keeps
 getting re-detected on each OCR pass — regardless of how long that
 takes, or how long the person stays on the same screen. It disappears
 only once an OCR pass completes and did NOT see it again."""
-
+ 
 import ctypes
 import tkinter as tk 
 import threading
