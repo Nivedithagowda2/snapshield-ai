@@ -1,0 +1,12 @@
+qai_hub_models
+onnxruntime
+numpy
+pillow
+mss
+easyocr
+torch
+torchvision
+pystray
+psutil
+pygetwindow
+pyinstaller

@@ -1,0 +1,9 @@
+﻿venv/
+dist/
+build/
+__pycache__/
+*.pyc
+snapshield_log.txt
+snapshield_raw_ocr.txt
+export_assets/
+*.spec
