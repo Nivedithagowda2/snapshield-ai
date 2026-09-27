@@ -5,7 +5,7 @@ All numbers below were measured via **Qualcomm AI Hub**, executed on a **real, h
 
 ---
 
-## 📊 Chart — Inference Time by Precision & Compute Unit
+##  Chart — Inference Time by Precision & Compute Unit
 
 ```mermaid
 xychart-beta
@@ -19,20 +19,20 @@ xychart-beta
 
 ---
 
-## 📋 Table — Full Results
+##  Table — Full Results
 
 | Model | Precision | Compute Unit | Time (ms) | Accuracy (PSNR) | Shipped? |
 |---|---|---|---|---|---|
-| Detector | Float | CPU | 1989.6 | — (baseline) | ❌ No |
-| Detector | Float | NPU | 38.3 | 84.24 dB | ❌ No |
-| Detector | **INT8 (w8a8)** | **NPU** | **13.5** | 34.22 dB ✅ passes | ✅ **Yes** |
-| Recognizer | Float | CPU | 14.8 | — (baseline) | ❌ No |
-| Recognizer | **Float** | **NPU** | **20.4** | 49.98 dB ✅ | ✅ **Yes** |
-| Recognizer | INT8 (w8a8) | NPU | 10.7 | 10.76 dB ❌ fails | ❌ No — accuracy broken |
+| Detector | Float | CPU | 1989.6 | — (baseline) |  No |
+| Detector | Float | NPU | 38.3 | 84.24 dB |  No |
+| Detector | **INT8 (w8a8)** | **NPU** | **13.5** | 34.22 dB  passes |  **Yes** |
+| Recognizer | Float | CPU | 14.8 | — (baseline) |  No |
+| Recognizer | **Float** | **NPU** | **20.4** | 49.98 dB  |  **Yes** |
+| Recognizer | INT8 (w8a8) | NPU | 10.7 | 10.76 dB |  No — accuracy broken |
 
 ---
 
-## 🏆 Final Shipped Configuration — Mixed Precision
+##  Final Shipped Configuration — Mixed Precision
 
 | Stage | Precision | Compute Unit | Time (ms) | NPU Ops |
 |---|---|---|---|---|
@@ -53,7 +53,7 @@ NPU utilization:       100% — every inference op runs on the Hexagon NPU
 
 ---
 
-## 🔬 The Investigation — Why Mixed Precision, Not Full INT8
+##  The Investigation — Why Mixed Precision, Not Full INT8
 
 ### Step 1 — Float precision baseline: NPU vs CPU
 
@@ -77,8 +77,8 @@ NPU utilization:       100% — every inference op runs on the Hexagon NPU
 
 | Model | Float PSNR | INT8 PSNR | Passes >30dB threshold? |
 |---|---|---|---|
-| Detector | 84.24 dB | 34.22 dB | ✅ Yes (marginal) |
-| Recognizer | 49.98 dB | **10.76 dB** | ❌ **No — accuracy broken** |
+| Detector | 84.24 dB | 34.22 dB |  Yes (marginal) |
+| Recognizer | 49.98 dB | **10.76 dB** |  **No — accuracy broken** |
 
 **Finding:** the quantized Recognizer failed accuracy validation. A PSNR of 10.76 dB means its output diverges too far from the reference to trust for real text recognition — in practice, this would mean missed or garbled secret detection. **We did not ship it.**
 
@@ -88,7 +88,7 @@ Rather than force a single precision across the whole pipeline for a bigger head
 
 ---
 
-## 🛠️ Toolchain
+##  Toolchain
 
 | Component | Version / Detail |
 |---|---|
@@ -101,7 +101,7 @@ Rather than force a single precision across the whole pipeline for a bigger head
 
 ---
 
-## 🔗 Job Links — Independently Verifiable Proof
+##  Job Links — Independently Verifiable Proof
 
 Every result above is backed by a real Qualcomm AI Hub job. These links can be opened directly to inspect the actual profiling run, the hardware used, and the raw output:
 
@@ -114,11 +114,5 @@ Every result above is backed by a real Qualcomm AI Hub job. These links can be o
 
 ---
 
-## ⚠️ Honest Note on Hardware Access
 
-Development and functional testing of the surrounding application (capture, detection logic, overlay UI) were done on a standard Windows laptop, since dedicated Snapdragon hardware wasn't available during the build window. **The NPU execution itself, however, was not simulated or estimated** — it was verified rigorously and independently through Qualcomm AI Hub's real, physical, hosted Snapdragon X Elite device, the official reference platform for Snapdragon-powered HP PCs. Every number in this document is backed by a clickable job link above that anyone can open and verify.
 
-## 📌 Still Open (Optional, Not Blocking)
-
-- Power draw comparison (NPU vs CPU) — for a battery/efficiency slide
-- Retry Recognizer INT8 with more calibration samples — may recover accuracy; not required since the float Recognizer already ships correctly on NPU
