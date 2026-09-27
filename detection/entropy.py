@@ -1,7 +1,7 @@
 """Shannon entropy scoring — catches secrets in formats we never wrote a
 regex for. A random-looking string with high character-level entropy
 (e.g. 'x7Ff9-QpL2mZ_eR8vN3wK') is very likely a token/secret even if it
-doesn't match any known prefix."""
+doesn't match any known prefix.""" 
 
 import math
 import re 
