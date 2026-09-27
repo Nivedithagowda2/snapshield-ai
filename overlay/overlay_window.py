@@ -11,7 +11,7 @@ import tkinter as tk
 import threading
     
 try:
-    ctypes.windll.shcore.SetProcessDpiAwareness(2)
+    ctypes.windll.shcore.SetProcessDpiAwareness(2) 
 except Exception: 
     try: 
         ctypes.windll.user32.SetProcessDPIAware()
