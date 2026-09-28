@@ -242,6 +242,17 @@ Once running, SnapShield shows a small shield icon in the Windows system tray (b
 
 This tray icon **is** the app's entire day-to-day interface — no terminal, no console window, no re-launch steps. Enable "Start with Windows" once, and SnapShield becomes a permanent, silent background guardian from that point on.
 
+
+# SnapShield AI
+
+Privacy-first AI protection powered by Snapdragon NPU.
+
+<p align="center">
+  <img src="Screenshot%202026-09-27%20165053.png" alt="SnapShield AI Screenshot" width="900"/>
+</p>
+
+## Overview
+...
 ---
 ##  Conclusion
 
