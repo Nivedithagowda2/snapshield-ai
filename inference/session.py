@@ -2,7 +2,7 @@
 
 IMPORTANT: this runs the EasyOCR Python package locally on CPU/GPU for
 the functional demo, since the dev machine has no Snapdragon NPU. The
-NPU-accelerated execution path (detector INT8 + recognizer float,
+NPU-accelerated execution path (detector INT8 + recognizer float, 
 Hexagon NPU) is proven separately in BENCHMARKS.md via Qualcomm AI Hub,  
 with per-stage latency in single-digit-to-low-double-digit milliseconds
 — roughly 60x faster than what this local CPU/GPU demo shows. That gap   
