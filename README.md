@@ -268,7 +268,8 @@ The result is an application that solves a real, everyday problem — accidental
 SnapShield AI is built and optimized for Snapdragon-powered HP PCs, install-once and run-anywhere, fully offline, and ready to protect from the moment it's launched.
 ---
 
-
+ License
+This project is licensed under the MIT License
 
 
 
