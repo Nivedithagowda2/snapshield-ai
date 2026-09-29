@@ -7,7 +7,7 @@ Hexagon NPU) is proven separately in BENCHMARKS.md via Qualcomm AI Hub,
 with per-stage latency in single-digit-to-low-double-digit milliseconds  
 — roughly 60x faster than what this local CPU/GPU demo shows. That gap    
 IS the pitch: this script proves the logic works, the benchmarks prove 
-why it needs to ship on Snapdragon."""
+why it needs to ship on Snapdragon."""  
 
 import time
 import numpy as np
